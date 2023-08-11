@@ -1,10 +1,13 @@
+import HomeContainer from "./containers/HomeContainer"
 
 
 function App() {
 
   return (
     <>
-      <h1>Redux-Learning</h1>
+      <div className="app">
+        <HomeContainer/>
+      </div>
     </>
   )
 }
