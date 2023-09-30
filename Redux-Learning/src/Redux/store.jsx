@@ -1,4 +1,4 @@
-import {createStore} from 'redux'
-import BookReducer from './Reducers'
+import { createStore } from "redux";
+import { BookReducer } from "./Reducers";
 
-export const store = createStore ( BookReducer );
+export const store = createStore(BookReducer);

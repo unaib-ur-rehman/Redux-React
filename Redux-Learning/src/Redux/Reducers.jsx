@@ -1,21 +1,22 @@
-import  {buy_book, decrement_book} from './BookTypes'
+import { BUY_BOOK, SELL_BOOK } from "./ActionTypes";
 
+export const initialState = {
+  NumberOfBooks: 20,
+};
+export const BookReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case BUY_BOOK:
+      return {
+        ...state,
+        NumberOfBooks: state.NumberOfBooks - 1,
+      };
 
-const initial_state ={
-    noofBooks : 20 // initail state of action
-}
- const BookReducer = (state = initial_state , action) =>{
-    switch(action.type){
-        case buy_book :
-            return{
-               ...state , noofBooks : state.noofBooks - 1 
-            }
-            case decrement_book :
-                return{
-                    ...state , noofBooks : state.noofBooks + 1
-                }
-            default : return state
-    }
-
-}
-export default BookReducer;
+    case SELL_BOOK:
+      return {
+        ...state,
+        NumberOfBooks: state.NumberOfBooks + 1,
+      };
+    default:
+      return state;
+  }
+};

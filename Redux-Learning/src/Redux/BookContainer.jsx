@@ -1,19 +1,19 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import {book_purchase , book_sell } from './Actions'
-
+import { useDispatch, useSelector } from "react-redux";
+import { buy_book, sell_book } from "./Actions.jsx";
 
 const BookContainer = () => {
-   const numberofBooks = useSelector (state => state.noofBooks)  
-   const dispatch = useDispatch ();
+  const noOfBooks = useSelector((state) => state.NumberOfBooks);
+  const dispatch = useDispatch();
   return (
     <>
-    <h1>Number of Books - {numberofBooks}</h1>
-    <button onClick={()=> {dispatch(book_purchase())}}>Buy Book</button> 
-    <button onClick={()=> {dispatch(book_sell())}}>Buy Book</button> 
- 
+      <div>
+        <h1> BookConatiner</h1>
+        <h2>No Of Books - {noOfBooks} </h2>
+        <button onClick={() => {dispatch(buy_book())}}>Buy Book</button>
+        <button onClick={() => {dispatch(sell_book())}}>Sell Book</button>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default BookContainer
+export default BookContainer;

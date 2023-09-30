@@ -1,15 +1,12 @@
-import { buy_book , decrement_book } from "./BookTypes"
+import {BUY_BOOK , SELL_BOOK } from './ActionTypes'
 
-export const book_purchase = () =>{
+export const buy_book = () => {
     return {
-        type : buy_book,
-
+        type : BUY_BOOK,
     }
 }
-
-export const book_sell =() =>{
-    return{
-        type : decrement_book,
+export const sell_book = () =>{
+    return {
+        type : SELL_BOOK,
     }
 }
-
